@@ -1,0 +1,27 @@
+language: c++
+cache:
+  apt: true
+  pip: true
+  directories:
+    - $HOME/.ccache
+    - $HOME/.cache/pip
+    - $HOME/apt-cacher-ng
+sudo: required
+dist: bionic
+services:
+  - docker
+env:
+  global:
+    - USE_TRAVIS=true
+    - USE_DOCKER=true
+    - USE_DEB=true
+  matrix:
+    - ROS_DISTRO=indigo
+    - ROS_DISTRO=kinetic
+    - ROS_DISTRO=melodic
+    - ROS_DISTRO=noetic ROS_PYTHON_VERSION=3
+script: source .travis/travis.sh
+notifications:
+  email:
+    on_success: always
+    on_failure: always

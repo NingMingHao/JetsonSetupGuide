@@ -1,0 +1,27 @@
+<launch>
+
+  <include file="$(find jsk_topic_tools)/sample/sample_boolean_node.launch" >
+  </include>
+
+  <test test-name="test_boolean_node"
+        name="test_boolean_node"
+        pkg="jsk_tools" type="test_topic_published.py">
+    <rosparam>
+      topic_0: /is_speaking
+      timeout_0: 10
+      topic_1: /both_are_speaking
+      timeout_1: 10
+      topic_2: /either_one_is_speaking
+      timeout_2: 10
+      topic_3: /robot_is_not_speaking
+      timeout_3: 10
+      topic_4: /boolean_node_to_check_topic_expression/output/and
+      timeout_4: 10
+      condition_4: "m.data is True"
+      topic_5: /boolean_node_to_check_t_expression/output/and
+      timeout_5: 10
+      condition_5: "m.data is True"
+    </rosparam>
+  </test>
+
+</launch>
