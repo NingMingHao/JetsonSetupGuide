@@ -10,7 +10,7 @@
 - Jetson AGX Orin NX
 
 **Tested software version**
-- JetPack 5.1.2
+- JetPack 5.1.2, JetPack 5.1.3, JetPack 5.1.4
 - ROS Noetic
 - OpenCV 4.5.5
 
